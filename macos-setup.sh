@@ -32,13 +32,20 @@ source macos.sh
 source git.sh
 
 
-# ssh keys generation TODO
+# ssh keys generation TODO https://gist.github.com/jexchan/2351996
 source ssh.sh
 
 
 # configure apps TODO
-source ./apps/fish.sh # configure fish shell
+source ./fish/setup.sh # configure fish shell
 # TODO iterm2 config
 # TODO youtube-dl config
+# TODO Rider config
+# TODO VSCode install extensions
+# TODO VSCdode config
+# TODO Docker config
+# TODO Vagrant config
+# TODO Ansible config
+
 
 echo "Macbook setup completed! Reboot can be a good idea."
