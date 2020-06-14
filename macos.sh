@@ -1,5 +1,25 @@
 #!/usr/bin/env bash
 
+
+echo "Creating directories..."
+
+cd $HOME
+# Create commonly used directories
+mkdir -p $HOME/dev
+mkdir -p $HOME/dev/_personal #
+mkdir -p $HOME/dev/_adler 
+mkdir -p $HOME/dev/bin # binary directory
+mkdir -p $HOME/Documents/_personal 
+mkdir -p $HOME/Documents/_job-adler 
+mkdir -p $HOME/Documents/_restricted 
+mkdir -p $HOME/Documents/_secure
+mkdir -p $HOME/Documents/_sw
+mkdir -p $HOME/Pictures/_desktopScreenshots
+
+DOTFILES_DIR=$HOME/.dotfiles
+cd $DOTFILES_DIR
+
+
 echo "Configuring OS..."
 # Set fast key repeat rate
 #defaults write NSGlobalDomain KeyRepeat -int 0

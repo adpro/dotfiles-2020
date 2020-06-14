@@ -19,30 +19,30 @@ PYTHON_PACKAGES=(
 )
 sudo pip install ${PYTHON_PACKAGES[@]}
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # install tool via brew and brew cask
-source brew.sh
+source "$DIR/brew.sh"
 
 
 # setup configuration of MacOS
-source macos.sh
+source "$DIR/macos.sh"
 
 
 # git configuration
-source git.sh
+source "$DIR/git.sh"
 
 
 # ssh keys generation TODO https://gist.github.com/jexchan/2351996
-source ssh.sh
+source "$DIR/ssh.sh"
 
 
 # configure apps TODO
-source ./fish/setup.sh # configure fish shell
-# TODO iterm2 config
+source "$DIR/fish/setup.sh" # configure fish shell
+source "$DIR/iterm/setup.sh" # iterm2 config - load preferences from folder
 # TODO youtube-dl config
-# TODO Rider config
-# TODO VSCode install extensions
-# TODO VSCdode config
+echo "Rider settings - go to https://github.com/adpro/rider-settings for further info." # Rider config shared in repo
+source "$DIR/vscode/setup.sh" # configure VSCode
 # TODO Docker config
 # TODO Vagrant config
 # TODO Ansible config

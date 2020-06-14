@@ -95,9 +95,10 @@ Many thanks to:
 
 - [David's Mac OSX v10.15 macOS Catalina Setup Guide](https://github.com/davidwolfpaw/macbook-setup)
 - [Getting started with dotfiles](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
-- [webpro .files](https://github.com/webpro/dotfiles)
+- [webpro's .files](https://github.com/webpro/dotfiles)
 - [Cătălin repo’s Dotfiles](https://github.com/alrra/dotfiles)
-- [cowboy dotfiles](https://github.com/cowboy/dotfiles)
+- [ginfuru's dotfiles](https://github.com/ginfuru/dotfiles)
+- [cowboy's dotfiles](https://github.com/cowboy/dotfiles)
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotfiles community](https://dotfiles.github.io)
 
