@@ -97,7 +97,7 @@ CASKS=(
 #    virtualbox # remove due to https://github.com/Homebrew/homebrew-cask/issues/63337, https://www.reddit.com/r/MacOS/comments/bqbowl/virtualbox_installation_fails_on_macos_mojave/, https://developer.apple.com/library/content/technotes/tn2459/_index.html
 )
 echo "Installing cask apps..."
-brew cask install —-appdir="/Applications" ${CASKS[@]}
+brew cask install --appdir="/Applications" ${CASKS[@]}
 
 # cleanup brew kegs
 brew cleanup -s
