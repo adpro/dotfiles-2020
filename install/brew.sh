@@ -83,7 +83,7 @@ CASKS=(
     virtualbox
     azure-data-studio
 #    visual-studio
-    charles
+#    charles
     gimp
     the-unarchiver
     moom
