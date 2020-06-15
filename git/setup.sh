@@ -1,4 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+DIR=$(dirname "$0")
+cd "$DIR"
+
+source ../scripts/functions.sh
+
+SOURCE="$(realpath .)"
+
 
 echo "Configuring git..."
 # set git global config
@@ -16,3 +24,6 @@ git config --global alias.c commit
 git config --global alias.ca 'commit --amend'
 git config --global alias.last 'log -1 HEAD'
 git config --global core.autocrlf input
+
+# set .gitignore global
+git config --global core.excludesfile "$SOURCE/.gitignore_global"

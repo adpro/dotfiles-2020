@@ -30,7 +30,7 @@ source "$DIR/macos.sh"
 
 
 # git configuration
-source "$DIR/git.sh"
+source "$DIR/git/setup.sh"
 
 
 # ssh keys generation TODO https://gist.github.com/jexchan/2351996
