@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-DIR=$(dirname "$0")
+#DIR=$(dirname "$0")
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd "$DIR"
 
 source ../scripts/functions.sh

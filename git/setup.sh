@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-DIR=$(dirname "$0")
+#DIR=$(dirname "$0")
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd "$DIR"
 
 source ../scripts/functions.sh
@@ -10,6 +11,8 @@ SOURCE="$(realpath .)"
 
 echo "Configuring git..."
 # set git global config
+git config --global user.name "Your Name"
+git config --global user.email your.name@email.net
 git config --global alias.st status
 git config --global alias.ch checkout
 git config --global alias.br branch

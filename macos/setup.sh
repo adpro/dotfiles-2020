@@ -59,7 +59,7 @@ defaults write com.apple.screencapture type -string “png”
 # Display full POSIX path as Finder window title
 # defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=” “
+sudo nvram SystemAudioVolume=" " 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
@@ -92,7 +92,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Enable spring loading for directories
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+chflags nohidden ~/Library # && xattr -d com.apple.FinderInfo ~/Library
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
 # Set the icon size of Dock items to 31 pixels

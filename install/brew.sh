@@ -59,7 +59,7 @@ PACKAGES=(
     1295203466
     1429033973
 )
-mas signin --dialog your.apple.id.email@example.com
+#mas signin --dialog your.apple.id.email@example.com # since 10.13+ is not possible https://github.com/mas-cli/mas/issues/164
 mas install ${PACKAGES[@]}
 
 
@@ -80,10 +80,9 @@ CASKS=(
     macdown
     clickup
     drawio
-    virtualbox
     azure-data-studio
 #    visual-studio
-#    charles
+#    charles    # payware
     gimp
     the-unarchiver
     moom
@@ -95,10 +94,11 @@ CASKS=(
     vlc
     veracrypt
     nvalt
+#    virtualbox # remove due to https://github.com/Homebrew/homebrew-cask/issues/63337, https://www.reddit.com/r/MacOS/comments/bqbowl/virtualbox_installation_fails_on_macos_mojave/, https://developer.apple.com/library/content/technotes/tn2459/_index.html
 )
 echo "Installing cask apps..."
-brew cask install —appdir=“/Applications” ${CASKS[@]}
+brew cask install —-appdir="/Applications" ${CASKS[@]}
 
 # cleanup brew kegs
-brew cleanup --force
-rm -f -r /Library/Caches/Homebrew/*
+brew cleanup -s
+rm -rf "$(brew --cache)"

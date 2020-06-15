@@ -27,7 +27,9 @@ On a fresh installation of MacOS update system:
 sudo softwareupdate -i -a
 ```
 
-Then, install this repo with `curl` available:
+Sign in to Mac App Store by Apple ID.
+
+Then install this repo with `curl` available:
 
 ```bash
 bash -c "`curl -fsSL https://raw.githubusercontent.com/adpro/dotfiles/master/remote-install.sh`"
@@ -40,24 +42,27 @@ git clone https://github.com/adpro/dotfiles.git ~/.dotfiles
 ```
 
 
-To `git.sh` add lines:
+Edit `git/setup.sh` lines with your real name and email (lines 13 and 14):
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email your.name@email.net
 ```
 
 And edit `brew.sh` line with signin dialog with to your real AppleID email:
-```bash
-mas signin --dialog your.apple.id.email@example.com
+```diff
+< mas signin --dialog your.apple.id.email@example.com
+> mas signin --dialog real-appleid@mymail.eu
 ```
 
 
-Use the [macos-setup](./macos-setup.sh) to install everything [listed above](#package-overview):
+Use the [macos-setup](./macos-setup.sh) to install everything [listed above](#package-overview) (change rights to execute with `chmod 755`):
 
 ```bash
 cd ~/.dotfiles
+chmod 755 macos-setup.sh
 ./macos-setup.sh
 ```
+
 
 ## Post-install
 
@@ -103,7 +108,8 @@ and do not install - quit installers.
 
 ## Manual Installation
 
-Manual [download](https://www.archimatetool.com/download/) and install [Archi](https://www.archimatetool.com/).
+- Manual [download](https://www.archimatetool.com/download/) and install [Archi](https://www.archimatetool.com/).
+- Manual [download](https://www.virtualbox.org/wiki/Downloads) and install [VirtualBox](https://www.virtualbox.org/).
 
 Next step is installation of company's software from repos (*AdminConsole and so on).
 
