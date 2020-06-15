@@ -12,7 +12,6 @@ It targets macOS systems 10.14 and 10.15.
 - [dotnet core install script](./dotnet/setup.sh)
 - [git configuration](./git/setup.sh)
 - [MacOS system configuration](./macos/setup.sh)
-- [ssh keys generation](./ssh.sh)
 - [fish configuration](./fish/setup.sh)
 - [iterm2 configuration](./iterm/setup.sh)
 - [vscode configuration](./vscode/setup.sh)
