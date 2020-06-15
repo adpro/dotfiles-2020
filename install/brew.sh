@@ -52,6 +52,8 @@ echo "Installing Mac App Store apps..."
 # 420212497 Byword (2.9.2)
 # 424390742 Compressor (4.4.6)
 # 1429033973 RunCat (7.9) == install
+# 1466841314 macOS Catalina (10.15.5)
+# macOS Mojave https://apps.apple.com/gb/app/macos-mojave/id1398502828?mt=12 (https://www.macworld.co.uk/how-to/mac-software/download-old-os-x-3629363/#toc-3629363-2)
 PACKAGES=(
     1147396723
     1295203466
@@ -79,7 +81,8 @@ CASKS=(
     clickup
     drawio
     virtualbox
-    visual-studio
+    azure-data-studio
+#    visual-studio
     charles
     gimp
     the-unarchiver
@@ -99,8 +102,3 @@ brew cask install —appdir=“/Applications” ${CASKS[@]}
 # cleanup brew kegs
 brew cleanup --force
 rm -f -r /Library/Caches/Homebrew/*
-
-
-
-
-

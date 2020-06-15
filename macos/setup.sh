@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 
 echo "Creating directories..."
@@ -26,6 +26,8 @@ echo "Configuring OS..."
 # Require password as soon as screensaver or sleep mode starts
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+# disable screensaver
+defaults write com.apple.screensaver idleTime -int 0
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Enable tap-to-click
@@ -61,8 +63,8 @@ sudo nvram SystemAudioVolume=” “
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "cs"
-defaults write NSGlobalDomain AppleLocale -string "en_CZ@currency=CZK"
+defaults write NSGlobalDomain AppleLanguages -array "en-CZ" "cs-CZ"
+defaults write NSGlobalDomain AppleLocale -string "en_CZ"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Show language menu in the top right corner of the boot screen

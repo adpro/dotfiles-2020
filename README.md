@@ -8,14 +8,19 @@ It targets macOS systems 10.14 and 10.15.
 
 - [Get this repo without git on clean Mac](./remote-install.sh)
 - [Basic install script](./macos-setup.sh)
-- [Homebrew](https://brew.sh), [homebrew-cask](https://github.com/Homebrew/homebrew-cask) and [Mac App Store CLI](https://github.com/mas-cli/mas) software installation in  [brew.sh](./brew.sh))
-- [Git global config](./git.sh)
-- [MacOS system configuration](./macos.sh)
+- [Homebrew](https://brew.sh), [homebrew-cask](https://github.com/Homebrew/homebrew-cask) and [Mac App Store CLI](https://github.com/mas-cli/mas) software installation in  [brew.sh](./install/brew.sh))
+- [dotnet core install script](./dotnet/setup.sh)
+- [git configuration](./git/setup.sh)
+- [MacOS system configuration](./macos/setup.sh)
 - [ssh keys generation](./ssh.sh)
-- [apps configurations](./apps/)
+- [fish configuration](./fish/setup.sh)
+- [iterm2 configuration](./iterm/setup.sh)
+- [vscode configuration](./vscode/setup.sh)
 - [regular update](./bin/update.sh)
 
 ## Install
+
+Check manual installed software like Google Chrome, Mozilla Firefox. If it is installed, uninstall them.
 
 On a fresh installation of MacOS update system:
 
@@ -66,10 +71,42 @@ cd ~/.dotfiles
     - Vagrant
     - Zoom
     - ClickUp
-    - Visual Studio
-    - WhatApp
+    - WhatsApp
     - Keybase
     - Spotify
+
+### Dropbox settings
+
+Dropbox => Preferences => Sync => Selective Sync => Choose Folders and select folder with access info.
+
+### Rider settings
+
+Rider settings are shared in private repository. Run Rider, on welcome screen go to Configure => Settings Repository... and set upstream URL: `https://github.com/adpro/rider-settings` and run `Overwrite Local`.
+
+Use `Rider => Preferences => Tools => Settings repository`
+
+License needed, use JetBrains Account option.
+
+### Visual Studio for Mac / Professional
+
+License info about using the same license for VS for Mac and VS for Windows is on [Visual Studio for Mac support](https://visualstudio.microsoft.com/vs/support/mac/can-use-existing-visual-studio-license-mac/)
+
+
+### macOS installation downloads for virtualization
+
+Get installation packages for macOS for virtualization ([MacWorld: How to download old Mac OS X and macOS versions](https://www.macworld.co.uk/how-to/mac-software/download-old-os-x-3629363/#toc-3629363-2)):
+
+- [macOS 10.14 Mojave](https://apps.apple.com/cz/app/macos-mojave/id1398502828?l=cs&mt=12)
+- [macOS 10.15 Catalina](https://apps.apple.com/cz/app/macos-catalina/id1466841314?l=cs&mt=12)
+
+and do not install - quit installers.
+
+
+## Manual Installation
+
+Manual [download](https://www.archimatetool.com/download/) and install [Archi](https://www.archimatetool.com/).
+
+Next step in installation of our software from repos (*AdminConsole).
 
 
 ## Everyday update
@@ -101,4 +138,4 @@ Many thanks to:
 - [cowboy's dotfiles](https://github.com/cowboy/dotfiles)
 - [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotfiles community](https://dotfiles.github.io)
-
+- [dotnet install script documentation page](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)

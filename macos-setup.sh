@@ -24,9 +24,12 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # install tool via brew and brew cask
 source "$DIR/brew.sh"
 
+#install dotnet via its script
+source "$DIR/dotnet/setup.sh"
+
 
 # setup configuration of MacOS
-source "$DIR/macos.sh"
+source "$DIR/macos/setup.sh"
 
 
 # git configuration
@@ -40,12 +43,8 @@ source "$DIR/ssh.sh"
 # configure apps TODO
 source "$DIR/fish/setup.sh" # configure fish shell
 source "$DIR/iterm/setup.sh" # iterm2 config - load preferences from folder
-# TODO youtube-dl config
-echo "Rider settings - go to https://github.com/adpro/rider-settings for further info." # Rider config shared in repo
 source "$DIR/vscode/setup.sh" # configure VSCode
-# TODO Docker config
-# TODO Vagrant config
-# TODO Ansible config
+# TODO youtube-dl config
 
 
 echo "Macbook setup completed! Reboot can be a good idea."
