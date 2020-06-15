@@ -106,7 +106,7 @@ and do not install - quit installers.
 
 Manual [download](https://www.archimatetool.com/download/) and install [Archi](https://www.archimatetool.com/).
 
-Next step in installation of our software from repos (*AdminConsole).
+Next step is installation of company's software from repos (*AdminConsole and so on).
 
 
 ## Everyday update
