@@ -4,7 +4,7 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd "$DIR"
 
-source ../scripts/functions.sh
+source scripts/functions.sh
 
 mkdir -p "$HOME/.config/fish"
 

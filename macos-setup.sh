@@ -9,7 +9,6 @@ source scripts/functions.sh
 info "Starting setup"
 # install xcode CLI
 xcode-select --install
-read -n1 -r -p "Press any key to continue after XCode CLI installation finish..."
 
 info "Updating pip..."
 sudo -H pip3 install --upgrade pip

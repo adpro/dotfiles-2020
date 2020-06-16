@@ -5,7 +5,7 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd "$DIR"
 
-source ../scripts/functions.sh
+source scripts/functions.sh
 
 # install extensions
 if [ -d "/Applications/iTerm.app" ] then
