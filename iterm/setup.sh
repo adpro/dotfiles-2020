@@ -6,7 +6,7 @@ source scripts/functions.sh
 
 
 # install extensions
-if [ -d "/Applications/iTerm.app" ] then
+if [ -d "/Applications/iTerm.app" ]; then
     substep_info "Setting iTerm2 to load prefs from directory..."
     # Specify the preferences directory
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$BASEDIR/iterm"
@@ -15,4 +15,3 @@ if [ -d "/Applications/iTerm.app" ] then
 else
     substep_error "Visual Studio Code is not installed, cannot install extensions."
 fi
-

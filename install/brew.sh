@@ -9,13 +9,12 @@ if [[ $? != 0 ]] ; then
     # Install Homebrew
     substep_info "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    # Update homebrew recipes
+    brew update
 else
     brew update
 fi
-
-
-# Update homebrew recipes
-brew update
 
 PACKAGES=(
     cask
@@ -35,7 +34,7 @@ substep_info "Installing packages..."
 brew install ${PACKAGES[@]}
 # any additional steps you want to add here
 # link readline
-#brew link --force readline
+# brew link --force readline
 
 
 substep_info "Installing Mac App Store apps..."
@@ -67,7 +66,7 @@ PACKAGES=(
     1295203466
     1429033973
 )
-#mas signin --dialog your.apple.id.email@example.com # since 10.13+ is not possible https://github.com/mas-cli/mas/issues/164
+# mas signin --dialog your.apple.id.email@example.com # since 10.13+ is not possible https://github.com/mas-cli/mas/issues/164
 mas install ${PACKAGES[@]}
 
 
@@ -88,8 +87,6 @@ CASKS=(
     clickup
     drawio
     azure-data-studio
-#    visual-studio
-#    charles    # payware
     gimp
     the-unarchiver
     moom

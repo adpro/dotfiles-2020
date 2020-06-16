@@ -4,7 +4,7 @@ source scripts/functions.sh
 
 mkdir -p "$HOME/.config/fish"
 
-SOURCE="$(realpath $BASEDIR/fish)"
+SOURCE="$(realpath $BASEDIR)"
 DESTINATION="$(realpath ~/.config/fish)"
 
 info "Setting up fish shell..."
