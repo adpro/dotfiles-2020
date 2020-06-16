@@ -2,7 +2,7 @@
 
 source scripts/functions.sh
 
-if test ! $(which git); then
+if git --version 2>&1 >/dev/null; then
     substep_info "Configuring git..."
     # set git global config
     git config --global user.name "Your Name"

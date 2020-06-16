@@ -4,7 +4,9 @@ source scripts/functions.sh
 
 mkdir -p "$HOME/.config/fish"
 
-SOURCE="$(realpath $BASEDIR)"
+cd fish
+
+SOURCE="$(realpath .)"
 DESTINATION="$(realpath ~/.config/fish)"
 
 info "Setting up fish shell..."
@@ -17,6 +19,8 @@ find * -name "*fish*" | while read fn; do
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 clear_broken_symlinks "$DESTINATION"
+
+cd ..
 
 info "Fish shell setup ended."
 
