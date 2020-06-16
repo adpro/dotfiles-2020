@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-cd "$DIR"
 
 source scripts/functions.sh
 
@@ -20,7 +18,7 @@ mkdir -p $HOME/Documents/_secure
 mkdir -p $HOME/Documents/_sw
 mkdir -p $HOME/Pictures/_desktopScreenshots
 
-DOTFILES_DIR=$HOME/.dotfiles
+DOTFILES_DIR=$BASEDIR
 cd $DOTFILES_DIR
 
 

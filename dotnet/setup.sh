@@ -10,19 +10,19 @@ SOURCE="$(realpath .)"
 
 echo "Installing .NET Core..."
 
-if "$SOURCE/"dotnet-install.sh "--channel" "Current"; then
+if "$SOURCE/dotnet/"dotnet-install.sh "--channel" "Current"; then
     substep_success "Installed dotnet core Current"
 else
     substep_error "Failed to installed dotnet core Current"
 fi
 
-if "$SOURCE/"dotnet-install.sh "--channel" "LTS"; then
+if "$SOURCE/dotnet/"dotnet-install.sh "--channel" "LTS"; then
     substep_success "Installed dotnet core LTS"
 else
     substep_error "Failed to installed dotnet core LTS"
 fi
 
-if "$SOURCE/"dotnet-install.sh "--channel" "2.2"; then
+if "$SOURCE/dotnet/"dotnet-install.sh "--channel" "2.2"; then
     substep_success "Installed dotnet core v2.2"
 else
     substep_error "Failed to installed dotnet core v2.2"

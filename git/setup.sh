@@ -1,11 +1,6 @@
 #!/usr/bin/env sh
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-cd "$DIR"
-
 source scripts/functions.sh
-
-SOURCE="$(realpath .)"
 
 if test ! $(which git); then
     substep_info "Configuring git..."
@@ -28,7 +23,7 @@ if test ! $(which git); then
     git config --global core.autocrlf input
 
     # set .gitignore global
-    git config --global core.excludesfile "$SOURCE/.gitignore_global"
+    git config --global core.excludesfile "$BASEDIR/git/.gitignore_global"
 else
     substep_error "Visual Studio Code is not installed, cannot install extensions."
 fi
