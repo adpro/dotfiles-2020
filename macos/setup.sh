@@ -1,7 +1,11 @@
 #!/usr/bin/env sh
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd "$DIR"
 
-echo "Creating directories..."
+source ../scripts/functions.sh
+
+substep_info "Creating directories..."
 
 cd $HOME
 # Create commonly used directories
@@ -20,7 +24,7 @@ DOTFILES_DIR=$HOME/.dotfiles
 cd $DOTFILES_DIR
 
 
-echo "Configuring OS..."
+substep_info "Configuring OS..."
 # Set fast key repeat rate
 #defaults write NSGlobalDomain KeyRepeat -int 0
 # Require password as soon as screensaver or sleep mode starts
@@ -103,5 +107,5 @@ defaults write com.apple.dock mineffect -string "genie"
 defaults write com.apple.dock minimize-to-application -bool true
 # Don’t animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
-echo "Done. Note that some of these changes require a logout/restart to take effect."
 
+substep_info "Done. Note that some of these changes require a logout/restart to take effect."

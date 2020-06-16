@@ -1,8 +1,14 @@
 #!/usr/bin/env sh
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd "$DIR"
+
+source ../scripts/functions.sh
+
+
 # Check for Homebrew to be present, install if it's missing
 if test ! $(which brew); then
-    echo "Installing homebrew..."
+    substep_info "Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -23,14 +29,14 @@ PACKAGES=(
     youtube-dl
     tldr
 )
-echo "Installing packages..."
+substep_info "Installing packages..."
 brew install ${PACKAGES[@]}
 # any additional steps you want to add here
 # link readline
 #brew link --force readline
 
 
-echo "Installing Mac App Store apps..."
+substep_info "Installing Mac App Store apps..."
 # 424389933 Final Cut Pro (10.4.8)
 # 915041082 Instalace OS X Yosemite (1.6.7)
 # 412347921 OmmWriter (1.63)
@@ -63,7 +69,6 @@ PACKAGES=(
 mas install ${PACKAGES[@]}
 
 
-echo "Installing cask..."
 CASKS=(
     iterm2
     google-chrome
@@ -96,9 +101,12 @@ CASKS=(
     nvalt
 #    virtualbox # remove due to https://github.com/Homebrew/homebrew-cask/issues/63337, https://www.reddit.com/r/MacOS/comments/bqbowl/virtualbox_installation_fails_on_macos_mojave/, https://developer.apple.com/library/content/technotes/tn2459/_index.html
 )
-echo "Installing cask apps..."
+substep_info "Installing cask apps..."
 brew cask install --appdir="/Applications" ${CASKS[@]}
 
 # cleanup brew kegs
+substep_info "Cleaning brew cache..."
 brew cleanup -s
 rm -rf "$(brew --cache)"
+
+substep_info "Homebrew installation ended."

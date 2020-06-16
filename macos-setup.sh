@@ -3,13 +3,15 @@
 # https://medium.com/macoclock/automating-your-macos-setup-with-homebrew-and-cask-e2a103b51af1
 # https://gist.github.com/t-io/8255711
 
+source scripts/functions.sh
+
 # Setup script for setting up a new macos machine
-echo "Starting setup"
+info "Starting setup"
 # install xcode CLI
 xcode-select --install
 read -n1 -r -p "Press any key to continue after XCode CLI installation finish..."
 
-echo "Updating pip..."
+info "Updating pip..."
 sudo -H pip3 install --upgrade pip
 
 # echo "Installing Python packages..."
@@ -22,25 +24,28 @@ sudo -H pip3 install --upgrade pip
 BASEDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # install tool via brew and brew cask
+info "Installing tools..."
 source "$BASEDIR/install/brew.sh"
 
 #install dotnet via its script
 source "$BASEDIR/dotnet/setup.sh"
 
 # setup configuration of MacOS
+info "Setting macOS..."
 source "$BASEDIR/macos/setup.sh"
 
 # git configuration
+info "Configuring git..."
 source "$BASEDIR/git/setup.sh"
 
 # ssh keys generation TODO https://gist.github.com/jexchan/2351996
-source "$BASEDIR/ssh.sh"
-
+# source "$BASEDIR/ssh.sh"
 
 # configure apps TODO
+info "Configuring apps..."
 source "$BASEDIR/fish/setup.sh" # configure fish shell
 source "$BASEDIR/iterm/setup.sh" # iterm2 config - load preferences from folder
 source "$BASEDIR/vscode/setup.sh" # configure VSCode
 # TODO youtube-dl config
 
-echo "Macbook setup completed! Reboot can be a good idea."
+info "Macbook setup completed!"

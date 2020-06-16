@@ -42,25 +42,17 @@ git clone https://github.com/adpro/dotfiles.git ~/.dotfiles
 ```
 
 
-Edit `git/setup.sh` lines with your real name and email (lines 13 and 14):
+Edit `git/setup.sh` lines with your real name and email (lines 14 and 15):
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email your.name@email.net
 ```
 
-And edit `brew.sh` line with signin dialog with to your real AppleID email:
-```diff
-< mas signin --dialog your.apple.id.email@example.com
-> mas signin --dialog real-appleid@mymail.eu
-```
-
-
-Use the [macos-setup](./macos-setup.sh) to install everything [listed above](#package-overview) (change rights to execute with `chmod 755`):
+Use the [macos-setup](./macos-setup.sh) to install everything [listed above](#package-overview):
 
 ```bash
 cd ~/.dotfiles
-chmod 755 macos-setup.sh
-./macos-setup.sh
+source macos-setup.sh
 ```
 
 
@@ -119,7 +111,7 @@ Next step is installation of company's software from repos (*AdminConsole and so
 For actual versions of installed software run:
 
 ```bash
-./bin/update.sh
+source ~/.dotfiles/bin/update.sh
 ```
 
 
