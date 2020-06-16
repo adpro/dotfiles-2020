@@ -5,8 +5,6 @@ brew update
 brew upgrade
 brew cask upgrade
 brew cleanup
-brew cask cleanup
-brew prune
 brew doctor
 brew cask doctor
 
