@@ -3,7 +3,7 @@
 source scripts/functions.sh
 
 # install extensions
-if test ! $(which code); then
+if [ -d "/Applications/Visual Studio Code.app" ]  then
     substep_info "Installing Visual Studio Code extensions..."
     code --install-extension bmalehorn.vscode-fish
     code --install-extension buianhthang.xml2json
