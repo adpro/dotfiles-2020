@@ -12,7 +12,7 @@ setopt NO_CASE_GLOB
 # setopt GLOB_COMPLETE
 
 # auto cd
-setops AUTO_CD
+setopt AUTO_CD
 
 # save history to history file
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
@@ -53,11 +53,11 @@ setopt CORRECT_ALL
 # alias -g ll='ls -lh'
 
 # Navigation
-function ...   ; cd ../.. ; end
-function ....  ; cd ../../.. ; end
-function ..... ; cd ../../../.. ; end
+function ... { cd ../.. ; }
+function .... { cd ../../.. ; }
+function ..... { cd ../../../.. ; }
 # Often used shortcuts/aliases
-function work; cd ~/dev/; end
+function work { cd ~/dev/; }
 
 # common
 alias ll='ls -lf'
@@ -75,11 +75,32 @@ fpath+=~/.dotfiles/zshenv/functions
 
 # load functions
 # autoload function && function
+autoload cpwd
+autoload weather
+autoload mkd
 
 # turn on advanced completions - command `compinstall` helps
-autoload -Uz compinit && compinit
+autoload -Uz compinit # && compinit
 
 # partial completion suggestions
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' expand prefix suffix
 
+# Prompt
+# ======
+# %(?.%F{green}√.%F{red}?%?)%f   foreground color green in last return value is 0 (ok) else `?value` in red 
+# %B%F{33}%1~%f%b   bold blue last directory based on ~
+# %#   for root print `#` else `%`
+# 256 terminal colors https://jonasjacek.github.io/colors/
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{33}%1~%f%b %# '
+
+# git branch to prompt
+# https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
+# TODO try https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{142}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
