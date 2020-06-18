@@ -70,21 +70,27 @@ alias pip='pip3'
 # Functions
 # =========
 
-# add path to functions
-fpath+=~/.dotfiles/zshenv/functions
+# add path to functions and autoload
+FUNCTIONS=~/.dotfiles/zshenv/functions
+fpath+="$FUNCTIONS"
+autoload $(ls "$FUNCTIONS")
 
-# load functions
-# autoload function && function
-autoload cpwd
-autoload weather
-autoload mkd
-
-# turn on advanced completions - command `compinstall` helps
-autoload -Uz compinit # && compinit
 
 # partial completion suggestions
-zstyle ':completion:*' list-suffixes
+zstyle ':completion:*' list-suffixes    
 zstyle ':completion:*' expand prefix suffix
+
+# turn on advanced completions - command `compinstall` helps
+# if you have insecure directories /usr/local/share/zsh/*, then `sudo chmod g-w /usr/local/share/zsh/*` (https://stackoverflow.com/a/49492563)
+autoload -Uz compinit && compinit
+
+
+# Enable colored output for ls
+export CLICOLOR=YES # MacOS
+if which dircolors &>/dev/null; then
+  alias ls="ls --color=auto"
+fi
+
 
 # Prompt
 # ======
@@ -92,15 +98,24 @@ zstyle ':completion:*' expand prefix suffix
 # %B%F{33}%1~%f%b   bold blue last directory based on ~
 # %#   for root print `#` else `%`
 # 256 terminal colors https://jonasjacek.github.io/colors/
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{33}%1~%f%b %# '
+PROMPT='%(?.%F{green}√.%F{red}»%?)%f %B%F{33}%1~%f%b %# '
 
 # git branch to prompt
+# http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information
 # https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
 # TODO try https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{142}(%b)%r%f'
+RPROMPT='$vcs_info_msg_0_'
+zstyle ':vcs_info:*' check-for-changes true
+# unstage string is changed from `U` to `!`
+zstyle ':vcs_info:*' unstagedstr '!'
+# stage string is changed from `S` to `+`
+zstyle ':vcs_info:*' stagedstr '+'
+#zstyle ':vcs_info:git:*' formats '%F{142}(%b)%r%f'
+zstyle ':vcs_info:git:*' formats '%F{240}%s%f %F{28}%r/%S%f %F{142}├┘ %b%f %F{13}%m%u%c%f '
+zstyle ':vcs_info:git:*' actionformats '%F{240}%s%f %F{28}%r/%S%f %F{142}ʅ %b%f|%F{red}%a%f %F{13}%m%u%c%f '
+zstyle ':vcs_info:git:*' patch-format '%10>...>%p%<< (%n applied)'
 zstyle ':vcs_info:*' enable git
