@@ -42,6 +42,8 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Set highlight color to purple
 defaults write NSGlobalDomain AppleHighlightColor -string "0.968627 0.831373 1.000000 Purple"
+# Set accent color to purple
+defaults write NSGlobalDomain AppleAccentColor -int 5
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 # Reveal IP address, hostname, OS version, etc. when clicking the clock

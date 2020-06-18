@@ -45,7 +45,7 @@ git clone https://github.com/adpro/dotfiles.git ~/.dotfiles
 Edit `git/setup.sh` lines with your real name and email (lines 8 and 9):
 ```bash
 git config --global user.name "Your Name"
-git config --global user.email your.name@email.net
+git config --global user.email your.name@mail.address
 ```
 
 Use the [macos-setup](./macos-setup.sh) to install everything [listed above](#package-overview):
