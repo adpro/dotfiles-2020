@@ -65,7 +65,7 @@ function fish_right_prompt -d "Write out the right prompt"
     end
 
     set_color 444444
-    printf '%s ' (fish_vcs_prompt)
+    printf '%s ' (fish_vcs_prompt | string trim -c ' ()')
     set_color normal
 
 end
