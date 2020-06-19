@@ -5,8 +5,6 @@ source scripts/functions.sh
 if git --version 2>&1 >/dev/null; then
     substep_info "Configuring git..."
     # set git global config
-    git config --global user.name "Your Name"
-    git config --global user.email your.name@email.net
     git config --global alias.st status
     git config --global alias.ch checkout
     git config --global alias.br branch
@@ -24,6 +22,12 @@ if git --version 2>&1 >/dev/null; then
 
     # set .gitignore global
     git config --global core.excludesfile "$BASEDIR/git/.gitignore_global"
+
+    # set link to work and personal configuration files
+    ln -s "$BASEDIR/git/.gitconfig-personal" ~/.gitconfig-personal
+    ln -s "$BASEDIR/git/.gitconfig-work" ~/.gitconfig-work
+
+    # manual edit .gitconfig and add includeIf sections (README)
 else
     substep_error "Visual Studio Code is not installed, cannot install extensions."
 fi

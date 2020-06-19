@@ -42,12 +42,6 @@ git clone https://github.com/adpro/dotfiles.git ~/.dotfiles
 ```
 
 
-Edit `git/setup.sh` lines with your real name and email (lines 8 and 9):
-```bash
-git config --global user.name "Your Name"
-git config --global user.email your.name@mail.address
-```
-
 Use the [macos-setup](./macos-setup.sh) to install everything [listed above](#package-overview):
 
 ```bash
@@ -71,13 +65,38 @@ source macos-setup.sh
     - Keybase
     - Spotify
 
+### git settings
+
+- Modify  `~/.gitconfig` file and add sections for different identities in repos in two main folders:
+    ```git
+    [includeIf "gitdir:~/dev/_personal/"]
+    path = .gitconfig-personal
+    [includeIf "gitdir:~/dev/_work/"]
+    path = .gitconfig-work
+    ```
+- Edit name of work directory (`_work`), if its name is different.
+- Edit name and email in `~/.dotfiles/git/.gitconfig-personal` and `~/.dotfiles/git/.gitconfig-work` files.
+    ```git
+    [user]
+    name = Ales Daniel personal
+    email = ales.daniel@server.tld
+    ```
+
+    ```git
+    [user]
+    name = Ales Daniel work
+    email = ales.daniel@server.tld
+    ```
+
 ### Dropbox settings
 
 Dropbox => Preferences => Sync => Selective Sync => Choose Folders and select folder with access info.
 
 ### Rider settings
 
-Rider settings are shared in private repository. Run Rider, on welcome screen go to Configure => Settings Repository... and set upstream URL: `https://github.com/adpro/rider-settings` and run `Overwrite Local`.
+Check Personal Access Token (PAT) for Rider IDE to github account for private repo. If doesn't exist, [create one](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+
+Rider settings are shared in private repository. Run Rider, on welcome screen go to Configure => Settings Repository... and set upstream URL: `https://github.com/adpro/rider-settings`, enter PAT and run `Overwrite Local`.
 
 Use `Rider => Preferences => Tools => Settings repository`
 
