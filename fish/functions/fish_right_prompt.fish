@@ -65,7 +65,12 @@ function fish_right_prompt -d "Write out the right prompt"
     end
 
     set_color 444444
-    printf '%s ' (fish_vcs_prompt | string trim -c ' ()')
+    # change default `(<branch> <upstream branch> <branch tracking>|<local status>)` to `<branch> <upstream branch> <branch tracking> <local status>` without brackets and `|`
+    printf '%s ' (fish_vcs_prompt | string trim -c ' ()' | string replace '|' ' ')
+    # add time in dark grey
+    set_color 555
+    echo -en (date +%H:%M:%S)
+    
     set_color normal
 
 end
