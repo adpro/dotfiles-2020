@@ -70,22 +70,22 @@ source macos-setup.sh
 - Modify  `~/.gitconfig` file and add sections for different identities in repos in two main folders:
     ```git
     [includeIf "gitdir:~/dev/_personal/"]
-    path = .gitconfig-personal
+            path = .gitconfig-personal
     [includeIf "gitdir:~/dev/_work/"]
-    path = .gitconfig-work
+            path = .gitconfig-work
     ```
 - Edit name of work directory (`_work`), if its name is different.
 - Edit name and email in `~/.dotfiles/git/.gitconfig-personal` and `~/.dotfiles/git/.gitconfig-work` files.
     ```git
     [user]
-    name = Ales Daniel personal
-    email = ales.daniel@server.tld
+            name = Ales Daniel personal
+            email = ales.daniel@server.tld
     ```
 
     ```git
     [user]
-    name = Ales Daniel work
-    email = ales.daniel@server.tld
+            name = Ales Daniel work
+            email = ales.daniel@server.tld
     ```
 
 ### Dropbox settings
