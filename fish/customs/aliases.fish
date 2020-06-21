@@ -8,8 +8,9 @@ function ll    ; ls -lh $argv ; end
 function lla   ; ls -la $argv ; end
 
 function code
-  set location "$PWD/$argv"
-  open -n -b "com.microsoft.VSCode" --args $location
+  # set location "$PWD/$argv"
+  # open -n -b "com.microsoft.VSCode" --args $location
+  open -a "Visual Studio Code" $argv
 end
 
 # Python
