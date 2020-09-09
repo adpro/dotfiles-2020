@@ -3,10 +3,12 @@
 # brew
 brew update
 brew upgrade
-brew cask upgrade
+# brew cask upgrade deprecated
+brew upgrade --cask
 brew cleanup
 brew doctor
-brew cask doctor
+# brew cask doctor deprecated
+brew doctor --verbose
 
 # mac app store
 mas upgrade
