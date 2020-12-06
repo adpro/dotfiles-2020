@@ -7,6 +7,7 @@ substep_info "Creating directories..."
 
 cd $HOME
 # Create commonly used directories
+mkdir -p $HOME/bin
 mkdir -p $HOME/dev
 mkdir -p $HOME/dev/_personal #
 mkdir -p $HOME/dev/_adler 

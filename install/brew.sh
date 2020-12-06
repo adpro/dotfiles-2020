@@ -20,7 +20,8 @@ PACKAGES=(
     cask
     mas
     git
-    python
+    pyenv
+    pipenv
     fish
     sphinx-doc
     pandoc
@@ -29,6 +30,11 @@ PACKAGES=(
     ffmpeg
     youtube-dl
     tldr
+    openssl
+    readline
+    sqlite3
+    xz
+    zlib
 )
 substep_info "Installing packages..."
 brew install ${PACKAGES[@]}
