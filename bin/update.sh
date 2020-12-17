@@ -18,4 +18,4 @@ sudo softwareupdate -i -a
 
 # show pinned apps versions
 echo "Available pinned software versions:"
-brew list --pinned | xargs -L1 brew info | grep "pinned"
+brew list --pinned | xargs -L1 brew info | grep "pinned" || exit 0
