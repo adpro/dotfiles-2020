@@ -47,4 +47,6 @@ source "$BASEDIR/iterm/setup.sh" # iterm2 config - load preferences from folder
 source "$BASEDIR/vscode/setup.sh" # configure VSCode
 # TODO youtube-dl config
 
+source "$BASEDIR/vscode/setup.sh" # configure pyenv a pipenv
+
 info "Macbook setup completed!"
