@@ -35,6 +35,11 @@ PACKAGES=(
     sqlite3
     xz
     zlib
+    git-quick-stats
+    msodbcsql17
+    mssql-tools
+    tflint
+    tfswitch
 )
 substep_info "Installing packages..."
 brew install ${PACKAGES[@]}
