@@ -4,6 +4,7 @@ set -xg PATH $PATH /usr/local/bin
 set -xg PATH $PATH /usr/local/sbin
 set -xg PATH $PATH /usr/local/opt/sphinx-doc/bin
 set -xg PATH $PATH ~/dev/bin
+set -xg PATH $PATH ~/bin
 
 source ~/.config/fish/customs/import_sources.fish
 
