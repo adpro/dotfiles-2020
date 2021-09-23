@@ -10,7 +10,12 @@ function lla   ; ls -la $argv ; end
 function code
   # set location "$PWD/$argv"
   # open -n -b "com.microsoft.VSCode" --args $location
-  open -a "Visual Studio Code" $argv
+  open -a "Visual Studio Code.app" $argv
+  #/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code $argv
+end
+
+function pycharm
+  open -na "PyCharm.app" $argv
 end
 
 # Python
